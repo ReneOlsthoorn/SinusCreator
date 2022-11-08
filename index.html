@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="/js/extern/jquery-3.1.1.min.js" type="text/javascript"></script>  
+  <script src="/js/app.SinusCreator.js"></script>
+<style>
+div {
+   margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<h1>Sinus Creator</h1>
+<script type="text/javascript">
+	$(function() {
+		window.onerror = function errorHandler(errorMsg, errorUrl, errorLineNumber) {
+			var newElement = document.createElement('div');
+			newElement.innerHTML = "Error: " + errorMsg + "<br/>Line: " + errorLineNumber + "<br/>File: " + errorUrl;
+			document.body.appendChild(newElement);
+			return false;
+		}
+    	app.singletonMain = new app.SinusCreator(document.body);
+    });
+</script>
+</body>
+</html>
